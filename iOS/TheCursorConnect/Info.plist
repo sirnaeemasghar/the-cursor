@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>app.thecursor.connect.pairing</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>thecursor</string>
+			</array>
+		</dict>
+	</array>
+	<key>NSBonjourServices</key>
+	<array>
+		<string>_cursor-screen._tcp</string>
+	</array>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>Share your iPhone screen privately with your paired Mac over the local network.</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>bluetooth-central</string>
+		<string>screen-capture</string>
+	</array>
+</dict>
+</plist>

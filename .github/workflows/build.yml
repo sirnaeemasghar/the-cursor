@@ -1,0 +1,19 @@
+name: Build and test
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Show toolchain (Xcode 27.2+ required)
+        run: |
+          xcodebuild -version
+          xcodebuild -showsdks
+      - name: Test shared core
+        run: ./scripts/test.sh
+      - name: Build Mac development app
+        run: ./scripts/build-mac.sh release
+      - name: Compile unsigned iPhone companion
+        run: ./scripts/build-ios.sh

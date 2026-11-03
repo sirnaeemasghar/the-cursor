@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDisplayName</key>
+	<string>The Cursor</string>
+	<key>CFBundleExecutable</key>
+	<string>TheCursor</string>
+	<key>CFBundleIconFile</key>
+	<string>AppIcon.icns</string>
+	<key>CFBundleIconName</key>
+	<string>AppIcon</string>
+	<key>CFBundleIdentifier</key>
+	<string>app.thecursor.mac</string>
+	<key>CFBundleName</key>
+	<string>The Cursor</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.1.0</string>
+	<key>CFBundleVersion</key>
+	<string>3</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>14.0</string>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>The Cursor connects to your iPhone as a Bluetooth pointer and pairs with The Cursor Connect.</string>
+	<key>NSBonjourServices</key>
+	<array>
+		<string>_cursor-screen._tcp</string>
+	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>Screen view uses the USB iPhone screen capture device. The Cursor does not open your Mac camera or record video.</string>
+	<key>NSHighResolutionCapable</key>
+	<true/>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>Share your iPhone screen privately with your paired Mac over the local network.</string>
+</dict>
+</plist>
