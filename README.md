@@ -27,7 +27,7 @@ with every Mac/iPhone combination is not guaranteed.
 
 | Component | Requirement |
 | --- | --- |
-| Build environment | A Mac with full Xcode 27.2+, Swift 6 and Python 3 |
+| Build environment | A Mac with full Xcode 26+, Swift 6 and Python 3 |
 | Mac application | macOS 14+ and Bluetooth LE peripheral support |
 | iPhone control | Physical iPhone, iOS 17+, Bluetooth and AssistiveTouch |
 | Wi-Fi screen viewing | iOS 27+, same local Wi-Fi, Local Network permission |
@@ -35,8 +35,8 @@ with every Mac/iPhone combination is not guaranteed.
 | iPhone installation | Your own Apple development signing team and Developer Mode |
 
 The build machine must run a macOS version supported by your Xcode installation.
-Wireless capture uses iOS 27 ScreenCaptureKit APIs, so older SDKs cannot build
-this source unchanged. Input supports portrait orientation. The simulator cannot
+Wireless capture requires Xcode 27.2+ and the iOS 27 ScreenCaptureKit SDK.
+Older SDKs build Bluetooth control with an explicit wireless-unavailable message. Input supports portrait orientation. The simulator cannot
 validate physical Bluetooth HID or iPhone screen capture compatibility.
 
 ## Quick start
@@ -183,8 +183,9 @@ tests cover coordinates, HID/keyboard state, queue ordering, pairing validation,
 wireless mutual authentication, frame integrity/replay and size bounds.
 Successful builds/tests do not prove device compatibility. Complete
 [device acceptance](docs/DEVICE_TESTING.md) before declaring a stable release.
-CI requires a runner with Xcode 27.2+; check the workflow's reported SDKs if the
-hosted runner has not yet supplied that toolchain.
+CI uses the runner's available SDK: older SDKs compile the Bluetooth companion
+fallback; Xcode 27.2+ also compiles wireless capture. A passing older-SDK build
+does not validate the wireless implementation.
 
 ## Source layout
 

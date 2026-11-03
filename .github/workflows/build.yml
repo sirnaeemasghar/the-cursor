@@ -7,7 +7,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Show toolchain (Xcode 27.2+ required)
+      - name: Show selected toolchain and SDKs
         run: |
           xcodebuild -version
           xcodebuild -showsdks

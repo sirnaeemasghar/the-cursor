@@ -40,3 +40,10 @@ current initialization can wait on that prompt before displaying the window.
 
 Keep this overview synchronized with implementation changes. Preserve all
 third-party notices. Public source availability does not establish stable support.
+
+## SDK compatibility fix
+
+Wireless capture is compiled only when the iOS ScreenCaptureKit module exists.
+Older SDKs build the Bluetooth companion and show a clear availability card.
+Xcode 27.2+ retains full wireless capture. CI with an older SDK does not validate
+wireless capture; local iOS 27 compilation must also be checked.

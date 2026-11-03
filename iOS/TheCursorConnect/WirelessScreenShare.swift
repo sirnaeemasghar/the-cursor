@@ -1,4 +1,6 @@
 import SwiftUI
+
+#if canImport(ScreenCaptureKit)
 import ScreenCaptureKit
 import Network
 import CoreImage
@@ -236,3 +238,19 @@ final class PhoneScreenShare: NSObject, ObservableObject, SCContentSharingPicker
         }
     }
 }
+
+#else
+/// Older SDKs can build Bluetooth setup/control, but have no iOS capture module.
+struct WirelessScreenControls: View {
+    @ObservedObject var connection: PhoneConnection
+    var body: some View {
+        GlassCard {
+            VStack(spacing: 10) {
+                Text("Wireless screen view").font(.system(size: 14, weight: .medium))
+                Text("This build supports Bluetooth control. For wireless screen viewing, rebuild with Xcode 27.2 or later and use iOS 27 or later.")
+                    .font(.caption).foregroundStyle(.secondary).multilineTextAlignment(.center)
+            }.padding(20).frame(maxWidth: .infinity)
+        }
+    }
+}
+#endif
